@@ -392,10 +392,16 @@
         /* ── PRICING ── */
         .pricing-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 1.5rem;
             max-width: 1100px;
             margin: 0 auto;
+        }
+
+        @media (max-width: 900px) {
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         .price-card {
@@ -1055,34 +1061,34 @@
         <div class="testimonials-grid">
             <div class="testimonial-card">
                 <div class="stars">★★★★★</div>
-                <p class="testimonial-text">"We missed a $4,200 AC replacement last summer because no one answered the phone at 7pm. Since Sofia went live, we haven't missed a single call. She paid for herself in the first week."</p>
+                <p class="testimonial-text">"[Your testimonial here — reserved for a verified review from a real client.]"</p>
                 <div class="testimonial-author">
-                    <div class="author-avatar">MR</div>
+                    <div class="author-avatar">—</div>
                     <div>
-                        <p class="author-name">Mike R.</p>
-                        <p class="author-title">Owner, MR Cooling &amp; Heating</p>
+                        <p class="author-name">Client Name</p>
+                        <p class="author-title">Owner, HVAC Business</p>
                     </div>
                 </div>
             </div>
             <div class="testimonial-card">
                 <div class="stars">★★★★★</div>
-                <p class="testimonial-text">"I was skeptical that an AI could handle my customers professionally. Called the demo line and was blown away. My customers have no idea they're talking to Sofia — they just know someone always answers."</p>
+                <p class="testimonial-text">"[Your testimonial here — reserved for a verified review from a real client.]"</p>
                 <div class="testimonial-author">
-                    <div class="author-avatar">JT</div>
+                    <div class="author-avatar">—</div>
                     <div>
-                        <p class="author-name">James T.</p>
-                        <p class="author-title">Owner, Thermal Pro HVAC</p>
+                        <p class="author-name">Client Name</p>
+                        <p class="author-title">Owner, HVAC Business</p>
                     </div>
                 </div>
             </div>
             <div class="testimonial-card">
                 <div class="stars">★★★★★</div>
-                <p class="testimonial-text">"Setup took less than 48 hours. Keith walked me through everything. The monthly report shows exactly how many calls Sofia handled — it's now my most important business metric."</p>
+                <p class="testimonial-text">"[Your testimonial here — reserved for a verified review from a real client.]"</p>
                 <div class="testimonial-author">
-                    <div class="author-avatar">SL</div>
+                    <div class="author-avatar">—</div>
                     <div>
-                        <p class="author-name">Sandra L.</p>
-                        <p class="author-title">Owner, Desert Comfort Air</p>
+                        <p class="author-name">Client Name</p>
+                        <p class="author-title">Owner, HVAC Business</p>
                     </div>
                 </div>
             </div>
