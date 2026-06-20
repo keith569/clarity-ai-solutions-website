@@ -479,9 +479,17 @@
 
         .site-features {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            grid-template-columns: repeat(4, 1fr);
             gap: 1.25rem;
             margin-bottom: 3rem;
+        }
+
+        @media (max-width: 900px) {
+            .site-features { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 560px) {
+            .site-features { grid-template-columns: 1fr; }
         }
 
         .site-feature {
