@@ -409,6 +409,141 @@
 
         .step-card p { color: var(--muted); font-size: 0.95rem; line-height: 1.7; }
 
+        /* ── FREE WEBSITE ── */
+        .value-split {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 1.5rem;
+            align-items: center;
+            max-width: 860px;
+            margin: 0 auto 2rem;
+        }
+
+        .value-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+        }
+
+        .value-card.highlight {
+            border-color: rgba(6,182,212,0.35);
+            background: rgba(6,182,212,0.06);
+        }
+
+        .value-card-icon {
+            width: 56px; height: 56px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.25rem;
+            background: rgba(6,182,212,0.1);
+            border: 1px solid rgba(6,182,212,0.2);
+        }
+
+        .value-card-icon svg { width: 28px; height: 28px; color: var(--cyan); }
+
+        .value-card h3 {
+            font-size: 1.15rem;
+            font-weight: 800;
+            color: var(--white);
+            margin-bottom: 0.6rem;
+        }
+
+        .value-card p { color: var(--muted); font-size: 0.9rem; line-height: 1.6; }
+
+        .value-plus {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--cyan);
+            text-align: center;
+        }
+
+        .value-equals {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+
+        .value-equals-pill {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--cyan), var(--blue));
+            color: var(--navy);
+            font-size: 1rem;
+            font-weight: 800;
+            padding: 0.75rem 2.25rem;
+            border-radius: 100px;
+            letter-spacing: 0.3px;
+        }
+
+        .site-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.25rem;
+            margin-bottom: 3rem;
+        }
+
+        .site-feature {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 1.5rem;
+            transition: border-color 0.3s;
+        }
+
+        .site-feature:hover { border-color: rgba(6,182,212,0.3); }
+
+        .site-feature-icon {
+            width: 40px; height: 40px;
+            border-radius: 10px;
+            background: rgba(6,182,212,0.1);
+            border: 1px solid rgba(6,182,212,0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .site-feature-icon svg { width: 20px; height: 20px; color: var(--cyan); }
+
+        .site-feature h4 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 0.35rem;
+        }
+
+        .site-feature p { font-size: 0.85rem; color: var(--muted); line-height: 1.6; }
+
+        .value-callout {
+            background: rgba(6,182,212,0.06);
+            border: 1px solid rgba(6,182,212,0.22);
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        .value-callout strong {
+            display: block;
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: var(--white);
+            margin-bottom: 0.5rem;
+        }
+
+        .value-callout p { color: var(--muted); font-size: 0.95rem; }
+
+        @media (max-width: 680px) {
+            .value-split { grid-template-columns: 1fr; }
+            .value-plus { font-size: 1.75rem; }
+        }
+
         /* ── PRICING ── */
         .pricing-grid {
             display: grid;
@@ -979,6 +1114,83 @@
                 <h3>Never Miss a Job</h3>
                 <p>Sofia answers professionally, captures the details, books the service call, and sends you an instant notification. Every lead captured. Every job counted.</p>
             </div>
+        </div>
+    </div>
+</section>
+
+<!-- FREE WEBSITE -->
+<section class="section section-navy2" id="free-website">
+    <div class="container">
+        <p class="section-label">Included Free With Every Plan</p>
+        <h2 class="section-title section-title-light">Two ways to win new business.<br>One monthly price.</h2>
+        <p class="section-sub section-sub-light">While Sofia captures every call, your custom website captures every Google search. Most AI answering services give you one. We give you both.</p>
+
+        <div class="value-split">
+            <div class="value-card">
+                <div class="value-card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+                </div>
+                <h3>Sofia Answers Every Call</h3>
+                <p>24/7 AI answering that books jobs, captures leads, and sends instant notifications. Never miss a call again.</p>
+            </div>
+
+            <div class="value-plus">+</div>
+
+            <div class="value-card highlight">
+                <div class="value-card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+                </div>
+                <h3>A Custom Website, Free</h3>
+                <p>Professional, fast, mobile-ready, and SEO-optimized. Built specifically for your business and included with every plan.</p>
+            </div>
+        </div>
+
+        <div class="value-equals">
+            <div class="value-equals-pill">= One Monthly Price. No Extras.</div>
+        </div>
+
+        <div class="site-features">
+            <div class="site-feature">
+                <div class="site-feature-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+                </div>
+                <div>
+                    <h4>Custom Built for You</h4>
+                    <p>Your services, your branding, your city. Not a generic template anyone can spot from a mile away.</p>
+                </div>
+            </div>
+            <div class="site-feature">
+                <div class="site-feature-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                </div>
+                <div>
+                    <h4>Lightning Fast</h4>
+                    <p>Loads in under one second. No WordPress bloat, no slow plugins. Google rewards speed with better rankings.</p>
+                </div>
+            </div>
+            <div class="site-feature">
+                <div class="site-feature-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+                </div>
+                <div>
+                    <h4>Built for Local SEO</h4>
+                    <p>Optimized so new customers find you on Google before they find your competitors. Your city, your trade, your name at the top.</p>
+                </div>
+            </div>
+            <div class="site-feature">
+                <div class="site-feature-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.69 12 19.79 19.79 0 011.61 3.35 2 2 0 013.6 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.91 8.6a16 16 0 006.29 6.29l.96-.96a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                </div>
+                <div>
+                    <h4>Lead Capture Built In</h4>
+                    <p>Every visitor has a clear path to call or contact you. No confusing menus, no lost leads, no missed opportunities.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="value-callout">
+            <strong>Agencies charge $2,000 to $5,000 for a website like this.</strong>
+            <p>With Clarity AI Solutions, it is included with every plan from day one.</p>
         </div>
     </div>
 </section>
