@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clarity AI Solutions — Never Miss Another Call</title>
+    <meta name="description" content="Sophia is a 24/7 AI answering service for HVAC businesses. Never miss a call, never miss a job.">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --navy: #0f1729;
+            --blue: #1a56db;
+            --blue-light: #3b82f6;
+            --accent: #06b6d4;
+            --white: #ffffff;
+            --gray: #f8fafc;
+            --gray-text: #64748b;
+            --dark-text: #1e293b;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            color: var(--dark-text);
+            line-height: 1.6;
+        }
+
+        /* NAV */
+        nav {
+            background: var(--navy);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo { color: var(--white); font-size: 1.25rem; font-weight: 700; text-decoration: none; }
+        .logo span { color: var(--accent); }
+
+        .nav-cta {
+            background: var(--blue);
+            color: var(--white);
+            padding: 0.5rem 1.25rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: background 0.2s;
+        }
+        .nav-cta:hover { background: var(--blue-light); }
+
+        /* HERO */
+        .hero {
+            background: var(--navy);
+            color: var(--white);
+            padding: 5rem 2rem 0;
+            text-align: center;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(6, 182, 212, 0.15);
+            color: var(--accent);
+            border: 1px solid rgba(6, 182, 212, 0.3);
+            padding: 0.35rem 1rem;
+            border-radius: 100px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.5px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 1.25rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero h1 span { color: var(--accent); }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #94a3b8;
+            max-width: 600px;
+            margin: 0 auto 2.5rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding-bottom: 4rem;
+        }
+
+        .btn-primary {
+            background: var(--blue);
+            color: var(--white);
+            padding: 0.875rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: background 0.2s;
+            display: inline-block;
+        }
+        .btn-primary:hover { background: var(--blue-light); }
+
+        .btn-secondary {
+            background: rgba(255,255,255,0.1);
+            color: var(--white);
+            padding: 0.875rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: background 0.2s;
+            display: inline-block;
+        }
+        .btn-secondary:hover { background: rgba(255,255,255,0.15); }
+
+        /* STAT BAR */
+        .stat-bar {
+            background: rgba(6, 182, 212, 0.08);
+            border-top: 1px solid rgba(6, 182, 212, 0.2);
+            padding: 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            flex-wrap: wrap;
+        }
+
+        .stat-item { text-align: center; color: var(--white); }
+        .stat-item strong { display: block; font-size: 2rem; font-weight: 800; color: var(--accent); }
+        .stat-item span { font-size: 0.85rem; color: #94a3b8; }
+
+        /* SECTIONS */
+        section { padding: 5rem 2rem; }
+        .container { max-width: 1100px; margin: 0 auto; }
+
+        .section-label {
+            text-align: center;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--blue);
+            margin-bottom: 0.75rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: clamp(1.75rem, 3vw, 2.5rem);
+            font-weight: 800;
+            color: var(--dark-text);
+            margin-bottom: 1rem;
+        }
+
+        .section-sub {
+            text-align: center;
+            color: var(--gray-text);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 3.5rem;
+        }
+
+        /* HOW IT WORKS */
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .step {
+            text-align: center;
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            background: var(--white);
+        }
+
+        .step-number {
+            width: 52px;
+            height: 52px;
+            background: var(--navy);
+            color: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            font-weight: 800;
+            margin: 0 auto 1.25rem;
+        }
+
+        .step h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 0.75rem; }
+        .step p { color: var(--gray-text); font-size: 0.95rem; }
+
+        /* PRICING */
+        .pricing-section { background: var(--gray); }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 750px;
+            margin: 0 auto;
+        }
+
+        .pricing-card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 2.5rem 2rem;
+            border: 2px solid #e2e8f0;
+            position: relative;
+        }
+
+        .pricing-card.featured { border-color: var(--blue); }
+
+        .featured-badge {
+            position: absolute;
+            top: -14px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--blue);
+            color: var(--white);
+            padding: 0.25rem 1rem;
+            border-radius: 100px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+
+        .plan-name { font-size: 1rem; font-weight: 700; color: var(--gray-text); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.5rem; }
+        .plan-price { font-size: 3rem; font-weight: 800; color: var(--dark-text); line-height: 1; margin-bottom: 0.25rem; }
+        .plan-price span { font-size: 1rem; font-weight: 500; color: var(--gray-text); }
+
+        .plan-desc {
+            color: var(--gray-text);
+            font-size: 0.9rem;
+            margin-bottom: 1.75rem;
+            padding-bottom: 1.75rem;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .plan-features { list-style: none; margin-bottom: 2rem; }
+        .plan-features li {
+            padding: 0.4rem 0;
+            font-size: 0.95rem;
+            color: var(--dark-text);
+            display: flex;
+            align-items: flex-start;
+            gap: 0.6rem;
+        }
+        .plan-features li::before { content: "✓"; color: var(--blue); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+
+        .plan-cta { display: block; text-align: center; padding: 0.875rem; border-radius: 8px; font-weight: 700; text-decoration: none; transition: all 0.2s; }
+        .plan-cta-outline { border: 2px solid var(--navy); color: var(--navy); }
+        .plan-cta-outline:hover { background: var(--navy); color: var(--white); }
+        .plan-cta-filled { background: var(--blue); color: var(--white); }
+        .plan-cta-filled:hover { background: #1447d4; }
+
+        /* DEMO */
+        .demo-section { background: var(--navy); color: var(--white); text-align: center; }
+        .demo-section .section-title { color: var(--white); }
+        .demo-section .section-sub { color: #94a3b8; }
+
+        .phone-number {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 800;
+            color: var(--accent);
+            letter-spacing: 2px;
+            margin: 1.5rem 0;
+            display: block;
+            text-decoration: none;
+        }
+        .phone-number:hover { color: #67e8f9; }
+        .demo-note { color: #64748b; font-size: 0.9rem; margin-top: 1rem; }
+
+        /* FORM */
+        .form-section { background: var(--white); }
+
+        .form-wrap {
+            max-width: 600px;
+            margin: 0 auto;
+            background: var(--gray);
+            border-radius: 16px;
+            padding: 2.5rem;
+            border: 1px solid #e2e8f0;
+        }
+
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+        .form-group { margin-bottom: 1.25rem; }
+        .form-group label { display: block; font-size: 0.875rem; font-weight: 600; color: var(--dark-text); margin-bottom: 0.4rem; }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-size: 1rem;
+            color: var(--dark-text);
+            background: var(--white);
+            transition: border-color 0.2s;
+            font-family: inherit;
+        }
+        .form-group input:focus,
+        .form-group textarea:focus { outline: none; border-color: var(--blue); }
+        .form-group textarea { resize: vertical; min-height: 100px; }
+
+        .form-submit {
+            width: 100%;
+            background: var(--blue);
+            color: var(--white);
+            border: none;
+            padding: 1rem;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.2s;
+            font-family: inherit;
+        }
+        .form-submit:hover { background: var(--blue-light); }
+
+        /* FOOTER */
+        footer {
+            background: var(--navy);
+            color: #64748b;
+            padding: 2rem;
+            text-align: center;
+            font-size: 0.875rem;
+        }
+        footer a { color: #94a3b8; text-decoration: none; }
+        footer a:hover { color: var(--white); }
+
+        /* RESPONSIVE */
+        @media (max-width: 600px) {
+            .stat-bar { gap: 1.5rem; }
+            .form-row { grid-template-columns: 1fr; }
+            nav { padding: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav>
+    <a href="/" class="logo">Clarity <span>AI</span> Solutions</a>
+    <a href="tel:5203412571" class="nav-cta">Call Sophia: (520) 341-2571</a>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+    <div class="hero-badge">AI Answering Service for HVAC Businesses</div>
+    <h1>Your phone rings at 6pm in July.<br><span>Are you answering it?</span></h1>
+    <p>Sophia answers every call 24/7 — books the job, captures the lead, and never puts a customer on hold. One recovered emergency call pays for months of service.</p>
+    <div class="hero-buttons">
+        <a href="tel:5203412571" class="btn-primary">Call Sophia Live Now</a>
+        <a href="#contact" class="btn-secondary">Get a Free Demo</a>
+    </div>
+    <div class="stat-bar">
+        <div class="stat-item">
+            <strong>$3,000+</strong>
+            <span>avg. HVAC emergency job value</span>
+        </div>
+        <div class="stat-item">
+            <strong>80%</strong>
+            <span>of callers won't leave voicemail</span>
+        </div>
+        <div class="stat-item">
+            <strong>24/7</strong>
+            <span>Sophia never misses a call</span>
+        </div>
+    </div>
+</section>
+
+<!-- How It Works -->
+<section>
+    <div class="container">
+        <p class="section-label">How It Works</p>
+        <h2 class="section-title">Up and running in 48 hours</h2>
+        <p class="section-sub">No hardware. No complicated setup. Sophia works through simple call forwarding — your existing number, no changes needed.</p>
+        <div class="steps">
+            <div class="step">
+                <div class="step-number">1</div>
+                <h3>Sign Up &amp; Configure</h3>
+                <p>Tell us about your business — your services, hours, and how you want calls handled. We configure Sophia specifically for your operation.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <h3>Forward Your Number</h3>
+                <p>Takes two minutes. Forward your business line to Sophia's assigned number. Your existing number stays the same — customers never notice a thing.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <h3>Never Miss a Job</h3>
+                <p>Sophia answers professionally, collects the details, books the call, and notifies you instantly. Every lead captured. Every job counted.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Pricing -->
+<section class="pricing-section">
+    <div class="container">
+        <p class="section-label">Pricing</p>
+        <h2 class="section-title">Simple, transparent plans</h2>
+        <p class="section-sub">No setup fees. 30-day free trial. One extra job a month covers your entire bill.</p>
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <p class="plan-name">Starter</p>
+                <p class="plan-price">$249<span>/mo</span></p>
+                <p class="plan-desc">Perfect for getting started. Sophia answers every call so you never miss a lead.</p>
+                <ul class="plan-features">
+                    <li>Sophia AI answering (up to 200 min/mo)</li>
+                    <li>Professional website included free</li>
+                    <li>Lead form &amp; call routing</li>
+                    <li>SSL &amp; uptime monitoring</li>
+                    <li>Monthly usage report</li>
+                </ul>
+                <a href="#contact" class="plan-cta plan-cta-outline">Get Started</a>
+            </div>
+            <div class="pricing-card featured">
+                <div class="featured-badge">Most Popular</div>
+                <p class="plan-name">Growth</p>
+                <p class="plan-price">$549<span>/mo</span></p>
+                <p class="plan-desc">Everything in Starter plus local SEO so new customers find you before your competitors.</p>
+                <ul class="plan-features">
+                    <li>Sophia AI answering (up to 500 min/mo)</li>
+                    <li>Professional website included free</li>
+                    <li>Local SEO (Google Business Profile, citations, reviews)</li>
+                    <li>Monthly blog post</li>
+                    <li>Lead form &amp; call routing</li>
+                    <li>Priority monthly reporting</li>
+                </ul>
+                <a href="#contact" class="plan-cta plan-cta-filled">Get Started</a>
+            </div>
+        </div>
+        <p style="text-align:center; margin-top:1.5rem; color:#64748b; font-size:0.9rem;">Additional minutes billed at $0.99/min. 12-month service agreement required. Free website included with all plans.</p>
+    </div>
+</section>
+
+<!-- Live Demo -->
+<section class="demo-section">
+    <div class="container">
+        <p class="section-label" style="color: var(--accent);">Hear It For Yourself</p>
+        <h2 class="section-title">Call Sophia right now</h2>
+        <p class="section-sub">Don't take our word for it. Call the number below and hear exactly how Sophia handles your customers — live, right now.</p>
+        <a href="tel:5203412571" class="phone-number">(520) 341-2571</a>
+        <p class="demo-note">Live demo line — Sophia will answer as if she's working for an HVAC business.</p>
+    </div>
+</section>
+
+<!-- Contact Form -->
+<section class="form-section" id="contact">
+    <div class="container">
+        <p class="section-label">Get Started</p>
+        <h2 class="section-title">Book your free demo</h2>
+        <p class="section-sub">We'll set up a 15-minute call, walk you through how Sophia works for your business, and have you live within 48 hours.</p>
+        <div class="form-wrap">
+            <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" placeholder="John Smith" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="business">Business Name</label>
+                        <input type="text" id="business" name="business" placeholder="Smith HVAC" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="(555) 000-0000" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="you@yourbusiness.com" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="message">Anything else we should know? (optional)</label>
+                    <textarea id="message" name="message" placeholder="Tell us about your call volume, busiest hours, etc."></textarea>
+                </div>
+                <button type="submit" class="form-submit">Request My Free Demo</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <p style="margin-bottom:0.5rem;">
+        <a href="mailto:keith@clarityaisolutions.io">keith@clarityaisolutions.io</a> &nbsp;·&nbsp;
+        <a href="tel:5203412571">(520) 341-2571</a>
+    </p>
+    <p>© 2026 Clarity AI Solutions LLC. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
